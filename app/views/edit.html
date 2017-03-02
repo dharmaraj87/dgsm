@@ -1,0 +1,28 @@
+<div class="modal-header text-right">
+            <!-- <h3 class="modal-title" id="modal-title">I'm a modal!</h3> -->
+            <span class="glyphicon glyphicon-remove" ng-click="cancel()"></span>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="row">
+            	<div class="col-md-4 col-sm-4 col-xs-4">
+            		<div class="text-center editModal">
+            			<h3>{{getData.p_name}}</h3>
+            			<div class="price"<sup>{{getData.c_currency}}</sup>{{getData.p_price}}</div>
+            				<h4>{{getData.p_name}}</h4>
+            				<div class="color MRGB10PX">
+            					<span style="background: {{getData.p_selected_color.hexcode}}"></span>
+            				</div>
+            				<select class="text-center" ng-options="item as item.code for item in getData.p_available_options.sizes" ng-model="size"></select>
+            				<select class="text-center" ng-options="o as o for o in qtyNumber" ng-model="qtyNo"></select>
+            				<button class="btn btn-primary MRGT10PX">ADD TO BAG</button>
+            		</div>
+            	</div>
+            	<div class="col-md-8 col-sm-8 col-xs-8 text-right">
+            		<img ng-src="images/{{getImages}}.jpg"/>
+            	</div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="submit(getData, qtyNo)">Submit</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
